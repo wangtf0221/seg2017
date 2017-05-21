@@ -1,0 +1,147 @@
+\section{Method}
+
+\subsection{Convention reflection tomography}
+
+As demonstrated by \cite{woodward:2008}, there are three basic components of depth-domain ray tomography: 
+The first component is the data -- the representation of the residual curvatures in the CIGs.
+It is the migrated depth error that the tomographic solver uses to estimate a residual velocity update
+(Woodward , 1998).
+Today, we can pick single-parameter residual curvature for preliminary, low-resolution inversion,
+but our later iterations rely on complex multiparameter fitting for high-resolution inversion.
+The second component of any ray tomography is the modelr, which 
+can range between two extremes: layer-based (Bloor, 1998)
+and grid-based approaches (Woodward et al., 1998). Today, we mainly use hybrid gridded models.
+%We divide the model into layers at interfaces in which we have sharp, ray-bending velocity
+%contrasts, such as at the water bottom, at salt boundaries, and at carbonate boundaries.
+%Within layers, we use continuously interpolated property grids. 
+The third component of a ray tomography is made up of the residual migration equations and their
+solver.
+%In general, velocity updating by tomography includes several key elements.
+%These are: a model description (layer- or grid-based, or hybrid gridded model);
+%data perturbations and the relationship
+%between the data perturbations and the velocity
+%perturbations (which builds the so-called backprojection operator);
+%and the algebraic solver that is used to obtain the
+%approximate solution.
+%It is also used to affect                                                                                                
+%a very fast prestack migration and set up the tomography
+%matrix. The velocity-depth determination method
+%uses the available offsets of all CRPs and inverts for the
+%parameters of all layers simultaneously
+
+
+We ray-trace the source and receiver rays corresponding to our depth picks through the model to generate equations
+that relate changes in the model to changes in the RMO. 
+These are residual migration equations based on the formulation of \cite{stok:1992}:
+
+The prime indicates a residually migrated reflector depth, zh is depth as a function of offset or angle h,
+	i indicates a node on the property grid, _ is the angle of incidence for the reflection,
+	_ is the reflector dip, v is the effective velocity at the reflector, 
+	and t_i is the change in traveltime corresponding to a change in property_ at node i. 
+	These are linear tomography equations, in that the _ i terms are calculated under the assumption
+	that raypaths do not change as we change the model. 
+	Although _ is most often velocity or slowness, it can be any earth property, such as Thomsen parameters.
+
+Our goal is to find property perturbations  that minimize the RMO of depth picks residually migrated 
+with a model including those perturbations, i.e., that minimize zh _ _z0 _, 
+ where zh _ is a nonnear-offset pick and z0 _ is a near-offset pick.
+ This is a floating datum criterion, in that all of the picks move to minimize their relative depth errors
+ rather than a static depth error.
+ We have one equation for each nonnear-offset pick.
+ The basic tomography update equation is formed by subtracting equation 1 for corresponding nonnear- and near-offset
+ picks and accumulating the picked depth errors on the right side: 
+ The geometry and background model terms in equation 1 are contained in L. 
+
+	As the linking occurs only througth one master offset as the reference event,
+	errors in the master event may propagate through the entire offset cluster and
+	affect the inversion accuracy this floating-reflector method. 
+
+\subsection{Reflection tomography using depth deviations of adjacent reflection angles}
+
+
+	We overcome these restriction by determing relative depth deviations
+	between adjacent reflection angles.
+
+Reflection seismic problems are severely underdetermined, and we need to regularize the problem. 
+A differentiation (roughening) operator is typically used in the regularization term.
+Harlan (1995) reparameterizes it into another form by introducing a smoothing operator.
+Instead of equation 2, we solve using LSQR and damped least squares. 
+weighting , preconditioner that constrains the shape of our update, following the approaches of
+Harlan (personal communication, 1995)
+and Fomel _1997_;
+For any one iteration of PSDM and RMOpicking, we solve equation 2 many times,
+iteratively reparameterizing the problem by refining the smoother S \cite[]{Bube:1994}.
+We start out by solving with a long-wavelength smoother in x, y, and z;
+
+Incorporating geologic information into reflection tomography 
+
+
+We substract the conventional tomographic inversion equation resulting in a better conditined
+inversion matrix.
+
+
+Matrix A in equation 9 is sparse and nonsymmetric. 
+Its least square solution can be found by solving the following system: 
+where T represents the transpose of a matrix. 
+Matrix ATA is square,symmetric and positive definite, and the system of equations 10 
+can be solved using linear solvers, such as the conjugate gradient method.
+Normally, it is an ill-posed system, and there is not a definitesolution solely
+on the basis of fitting the data.
+A regularization method is introduced by Tikhonov and Arsenin (1977) and variations to it have been developed,
+  among them regularization with steering filters (Clapp et al., 2004),
+  anisotropic regularization (Zhou et al., 2008),
+  and spatially variant Gaussian smoothing regularization (Zhou et al., 2009).
+  Some people also refer to regularization as model styling or shaping filters.
+  By adding regularization to the system, we have an additional goal to fit the data
+  with model characteristics that we desire.
+
+\subsection{Main steps of the algorithm}
+
+To summarize, the main procedure involves:
+First, a common-offset depth migration is performed,
+	and the locally coherent events should be picked, either
+	automatically or manually, for reflection points and dips.
+Second, choose a near-offset reflection point as a
+	reference point, and shoot the specular rays using offset
+	and azimuth of this reference section. This will give t0 .
+Third, for all other individual reflection points related to
+	the above reference point, we again perform specular ray
+	tracing, using the offset and azimuth of the reference
+	point, to mimic near-offset modeling. This will generate
+	the traveltime t0h , hence the traveltime deviation in
+	equation (2). We can also obtain the corresponding
+	derivatives, which are the operators B and C .
+Fourth, for the same reflection points, we perform a
+	specular ray tracing again, this time using the current
+	offset and azimuth of this reflection point instead of
+	those of the reference point. This process is used to
+	obtain the operator D .
+Fifth, compose the backprojection operator A
+	according to equation (4).
+Sixth, solve the linear system of equations.
+	where ztrue is the depth of the true reflection point below
+	the surface location r, and zr is the corresponding migrated
+	depth for the reflector with the given surface location,
+	offset (and azimuth in 3D) and migration velocity. If the
+	true depth of the reflector is known, we can use it in the
+	inversion. But in practice, except near well locations, we
+	don¡¯t know the true location of the reflector. This makes
+	depth perturbations can not be accurately determined. Some
+	have suggested the use of a floating datum (Woodward et
+			al., 1998; Bednar, 1999) as a partial solution to this
+	problem. The idea behind floating datum is that since we
+	don¡¯t know the true reflector position, we can remove the
+	effect of reflector by subtracting the near-offset deviation
+	from the far-offset deviation.
+
+
+we subtract the RMO predicted linearly by the corresponding smooth update ___SW___; and finally we reduce
+the wavelengths in S and solve again.
+We repeat this process until we reach a predetermined smoothness or resolution in the update
+or until it is obvious we have violated the linear assumptions of our ray-traced residual migration equations.
+We choose between the set of updates of different smoothness.
+At this point, we remigrate and begin a new iteration.
+
+We observe that our approach has some similarity with the differential semblance optimzation es and
+		Carazzone, 1991) in angle domain \cite[]{brandsbergdahl:2003}.
+

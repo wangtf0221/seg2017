@@ -1,0 +1,85 @@
+\begin{thebibliography}{}
+\itemsep0pt
+
+\bibitem[Biondi and Almomin, 2012]{BiondiEtAl2012}
+Biondi, B., and A. Almomin,  2012, Tomographic full waveform inversion ({TFWI})
+  by combining full waveform inversion with wave-equation migration velocity
+  anaylisis, {\it in} {SEG} Technical Program Expanded Abstracts 2012: Society
+  of Exploration Geophysicists.
+
+\bibitem[Chi et~al., 2015]{Chi2015}
+Chi, B., L. Dong, and Y. Liu,  2015, Correlation-based reflection full-waveform
+  inversion: {Geophysics}, {\bf 80}, R189--R202.
+
+\bibitem[Guo and Alkhalifah, 2016]{Guo2016}
+Guo, Q., and T. Alkhalifah,  2016, {\it in} A nonlinear approach of elastic
+  reflection waveform inversion: Society of Exploration Geophysicists,
+  1421--1425.
+
+\bibitem[Hale, 2013]{Hale2013}
+Hale, D.,  2013, Dynamic warping of seismic images: Geophysics, {\bf 78},
+  S105--S115.
+
+\bibitem[Li et~al., 2016]{Li2016a}
+Li, Z., X. Ma, C. Fu, B. Gu, and G. Liang,  2016, Frequency-wavenumber
+  implementation for p- and s-wave separation from multi-component seismic
+  data: Exploration Geophysics, {\bf 47}, 32.
+
+\bibitem[Luo et~al., 2016]{Luo2016}
+Luo, Y., Y. Ma, Y. Wu, H. Liu, and L. Cao,  2016, Full-traveltime inversion:
+  Geophysics, {\bf 81}, R261--R274.
+
+\bibitem[Ma and Hale, 2013]{Ma2013}
+Ma, Y., and D. Hale,  2013, Wave-equation reflection traveltime inversion with
+  dynamic warping and full-waveform inversion: Geophysics, {\bf 78},
+  R223--R233.
+
+\bibitem[Operto et~al., 2013]{operto2013guided}
+Operto, S., Y. Gholami, V. Prieux, A. Ribodetti, R. Brossier, L. Metivier, and
+  J. Virieux,  2013, A guided tour of multiparameter full-waveform inversion
+  with multicomponent data: From theory to practice: The Leading Edge, {\bf
+  32}, 1040--1054.
+
+\bibitem[Raknes and Weibull, 2016]{RaknesEtAl2016}
+Raknes, E.~B., and W. Weibull,  2016, Combining wave-equation migration
+  velocity analysis and full-waveform inversion for improved {3D} elastic
+  parameter estimation, {\it in} {SEG} Technical Program Expanded Abstracts
+  2016: Society of Exploration Geophysicists.
+
+\bibitem[Sun and Symes, 2012]{SunEtAl2012}
+Sun, D., and W.~W. Symes,  2012, Waveform inversion via nonlinear differential
+  semblance optimization, {\it in} {SEG} Technical Program Expanded Abstracts
+  2012: Society of Exploration Geophysicists.
+
+\bibitem[Vigh et~al., 2014]{vigh:2014}
+Vigh, D., K. Jiao, D. Watts, and D. Sun,  2014, Elastic full-waveform inversion
+  application using multicomponent measurements of seismic data collection:
+  Geophysics, {\bf 79}, R63--R77.
+
+\bibitem[Wang et~al., 2017]{Wang2017WEMVA}
+Wang, C., W. Weibull, J. Cheng, and B. Arntsen,  2017, Automatic shear-wave
+  velocity analysis with elastic reverse time migration: 79th EAGE Conference
+  and Exhibition 2017, Expanded Abstracts.
+
+\bibitem[Wang and Cheng, 2017]{WangEtAl2017}
+Wang, T., and J. Cheng,  2017, Elastic full waveform inversion based on mode
+  decomposition: the approach and mechanism: Geophysical Journal International,
+  {\bf 209}, 606--622.
+
+\bibitem[Wu and Alkhalifah, 2015]{Wu2015b}
+Wu, Z., and T. Alkhalifah,  2015, Simultaneous inversion of the background
+  velocity and the perturbation in full-waveform inversion: Geophysics, {\bf
+  80}, R317--R329.
+
+\bibitem[Xu et~al., 2012]{xu:2012}
+Xu, S., D. Wang, F. Chen, G. Lambare, and Y. Zhang,  2012, Inversion on
+  reflected seismic wave: 82nd Annual International Meeting, SEG, Expanded
+  Abstracts,  1--7.
+
+\bibitem[Zhou et~al., 2015]{Zhou2015}
+Zhou, W., R. Brossier, S. Operto, and J. Virieux,  2015, Full waveform
+  inversion of diving \& reflected waves for velocity model building with
+  impedance inversion based on scale separation: Geophysical Journal
+  International, {\bf 202}, 1535--1554.
+
+\end{thebibliography}

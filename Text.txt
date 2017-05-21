@@ -1,0 +1,120 @@
+Residual-curvature analysis of prestack depth migrated
+common image gathers (CIGs) is widely used for updating
+the whole velocity model in areas of complex geology. The
+velocity is estimated by maximizing the flatness of these
+events in either the time domain or the depth domain. In
+order to perform conventional reflection tomography, the
+reflector positions are needed and are either guessed or
+estimated. Therefore, the backprojection operator is often
+incorrectly calculated because of the incorrectly estimated
+reflector positions. This process may slow down the
+convergence of inversion. Van Trier (1990) points out that,
+instead of using reflectors in the depth domain as the
+reference events, we may use the reference events in the
+time domain. Based on the principle that ray tracing
+(modeling) undoes migration, these reference events in the
+time domain are the true events and don¡¯t change with
+velocity variations. Hence if we can convert the depth
+deviations into adequate time deviations, there is no need to
+use reflector positions in the inversion.
+
+Migration velocity analysis basically uses the flatness of
+the CIG as a criterion for velocity quality. If the migration
+velocity model is not correct, the same reflector will appear
+at different depth positions for different constant-offset
+sections. In principle, one needs to determine the
+differences between the true and migrated depths of the
+reflector at each offset and surface location, and convert
+these depth perturbations into velocity perturbations in the
+inversion method.
+To obtain the depth deviation, most tomographic methods
+need reflector positions for finding the depth perturbation.
+Unfortunately, the true position of a reflector is not known,
+so depth perturbations from it can not be accurately
+determined. To solve this problem, one may try to invert
+for an additional unknown apart from velocity, namely the
+depths of interfaces in the velocity model (Stork 1992). But
+the velocity-depth ambiguity can lead to instabilities and
+poor convergence in the optimization. Van Trier (1990)
+chose not to parameterize both velocity and depth in the
+optimization. Instead, he obtained the reflector depths from
+the migrated data, and used them only in computing the
+backprojection operator.
+
+The reflector
+perturbations are thus better determined in the time domain
+than they are in the depth domains. Since the reference
+events are the true seismic events and do not move as
+velocity changes, calculating the backprojection operator
+will focus only on the offset behavior of the events, which
+provides the most detailed velocity variations.
+
+The lack of flatness of an event across different offsets on a
+depth migrated CIG indicates that the velocity is in error.
+
+
+At each fixed surface location r , the depth perturbation
+can be represented as
+
+
+To summarize, the main procedure involves:
+? First, a common-offset depth migration is performed,
+and the locally coherent events should be picked, either
+automatically or manually, for reflection points and dips.
+? Second, choose a near-offset reflection point as a
+reference point, and shoot the specular rays using offset
+and azimuth of this reference section. This will give t0 .
+? Third, for all other individual reflection points related to
+the above reference point, we again perform specular ray
+tracing, using the offset and azimuth of the reference
+point, to mimic near-offset modeling. This will generate
+the traveltime t0h , hence the traveltime deviation in
+equation (2). We can also obtain the corresponding
+derivatives, which are the operators B and C .
+? Fourth, for the same reflection points, we perform a
+specular ray tracing again, this time using the current
+offset and azimuth of this reflection point instead of
+those of the reference point. This process is used to
+obtain the operator D .
+? Fifth, compose the backprojection operator A
+according to equation (4).
+? Sixth, solve the linear system of equations.
+¦¤z = ztrue ? zr , (1)
+where ztrue is the depth of the true reflection point below
+the surface location r, and zr is the corresponding migrated
+depth for the reflector with the given surface location,
+offset (and azimuth in 3D) and migration velocity. If the
+true depth of the reflector is known, we can use it in the
+inversion. But in practice, except near well locations, we
+don¡¯t know the true location of the reflector. This makes
+depth perturbations can not be accurately determined. Some
+have suggested the use of a floating datum (Woodward et
+al., 1998; Bednar, 1999) as a partial solution to this
+problem. The idea behind floating datum is that since we
+don¡¯t know the true reflector position, we can remove the
+effect of reflector by subtracting the near-offset deviation
+from the far-offset deviation.
+
+follow Van Trier (1990) to give an alternative
+solution. In his thesis, Van Trier suggests using a true zerooffset
+reflection event as a reference, and modeling zerooffset
+events for the migrated reflectors in each constantoffset
+section. Since the modeled events in the zero-offset
+section correspond to true zero-offset events, this approach
+would seem to provide an ideal first step to a full solution
+of the inverse problem. Unfortunately, however, we don¡¯t
+have true zero-offset data. To make Van Trier¡¯s method
+feasible, we need to use another, usually near-offset as the
+reference event.
+
+our method has more
+useful velocity coverage and is more stable than floatingdatum
+methods. The total number of iterations is 10
+using a sparse matrix LSQR solver with dip-oriented
+regularization.
+
+Conclusions
+Residual tomographic inversion is an effective tool for
+estimation of velocity structure Proper formulation of the
+method produces an accurate and rapidly converging
+algorithm.

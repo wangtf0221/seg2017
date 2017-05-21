@@ -1,0 +1,78 @@
+\section{Introduction}
+With the development of high-performance computational abilities, people are paying more
+attention to the elastic full waveform inversion (EFWI) to recover the elastic properties of the
+subsurface \cite[]{vigh:2014}.
+EFWI provides high-resolution model estimation but notoriously surfers from
+the same nonlinearities or cycle-skipping problems as in acoustic
+case and also the trade-offs of multi-parameter inversion \cite[]{operto2013guided}.
+In the absence of low frequency data and/or good initial models, EFWI falls into local minimal
+easily
+because of its incapability to recover the low and intermediate wavenumber components of the model.
+
+\cite{xu:2012} suggested using a reflection waveform inversion (RWI) method to suppress the
+nonlinearity in FWI, 
+which aim to invert the long-wavelength components of the model by using the reflections 
+predicted by migration/demigration process.
+%The key point of RWI is to project the data-domain residuals back to the reflection wavepath to 
+RWI highly relies on the accurate reflectivity to generate the reflections that can match the
+observed data. However, it is very challenging and also expensive to obtain a good reflectivity model through 
+least-square migration when initial model is far away from the true value.
+Through minimizing misfit function of waveform in data domain, the RWI method is developed
+by several works \cite[]{Wu2015b,Zhou2015}, and recently extended to elastic case by
+\cite{Guo2016}.
+%is to project the data-domain residuals back to the reflection wavepath to 
+The misfit function also can be built in image domain in the manner of wave equation migration
+velocity analysis (WEMVA), which tries to maximize
+energy at zero offset location in the extended image space
+\cite[]{BiondiEtAl2012,SunEtAl2012}.
+\cite{RaknesEtAl2016} 
+developed the image-domain method in the 3D elastic media. 
+\cite{Wang2017WEMVA} utilized PS image to update the $V_s$ model through mode decomposition.
+But it is a big issue that the extended domain approach requires huge computational cost,
+especially in 3D case.
+
+%for both the imaging condition and the forward modelling in each iteration.
+
+%\cite{Zhou2015} proposed a joint FWI method to combine the diving and reflected waves to
+%utilize both the conventional FWI and RWI.
+%In addition, \cite{Wang:2015} found that wave mode decomposition may be beneficial to deal with the
+%elastic parameter trade-offs.
+Traveltime information are more sensitive and linearly related to
+the low-wavenumber components of the model. Therefore, traveltime inversion will be more robust and helpful to
+build initial models containing long-wavelength components for
+%build appropriate initial models containing long-wavelength components for
+conventional FWI \cite[]{Chi2015, Luo2016}.
+\cite{Ma2013} introduced a wave equation reflected traveltime inversion (WERTI) method to build the low
+wavenumber of the model. 
+Unfortunately, in elastic case, traveltimes of a particular wave mode are difficult
+to extract due to the complicated mode-conversions. The multi-parameter trade-offs will increase the
+nonlinearity as well. \cite{WangEtAl2017} obtained good results by utilizing the wave mode decomposition to precondition the
+gradients in EFWI. The mode decomposition has been proved an efficient tool to provide decomposed data for
+hierarchical strategies.
+
+%Elastic reflections carry background information of the P and S wave velocities can
+%be in favor of EFWI with good initial P and S wave
+%velocity models, 
+%In this abstract,   
+%we aim to tackle the traveltime misfits of P-P and P-S reflections with the help
+%of wave mode decomposition and dynamic image warping (DIW) \cite[]{Hale2013}.
+%In this abstract, we separate the PP and PS reflections in the observed and predicted multicomponent data to
+%extract the individual traveltime residuals through DIW \cite[]{Hale2013}.
+%using surface P/S wave
+%separation. Dynamic image warping \cite[]{Hale2013} helps to extract the local traveltime residual
+%between the observed and the predicted data.
+We calculate the reflection wavepath and its components of different wave modes in elastic media.
+The investigation of reflection wavepath (kernel) shows the effectiveness of mode decomposition to suppress the artifacts
+in the gradient calculation.
+P/S separation of multicomponent seismograms is applied to the observed and predicted reflection data 
+to extract the individual traveltime residuals through DIW \cite[]{Hale2013}.
+Based on the analysis of elastic reflection kernels and the separated traveltime residuals, 
+we design a two-stage workflow to implement
+the E-WERTI method,
+in which the traveltime of PP is firstly used to recover the background
+$V_p$ model followed by inverting the background $V_s$ model through the traveltime of PS
+reflections.
+During the $V_s$ inversion, we precondition the $V_s$ gradient through spatial wave mode
+decomposition.
+Finally, the numerical example of Sigsee2A model proves the robustness and validity of our
+E-WERTI method.

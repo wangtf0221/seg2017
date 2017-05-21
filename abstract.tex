@@ -1,0 +1,25 @@
+\section{summary}
+Elastic reflection waveform inversion (ERWI) utilize the reflections to update the low and
+intermediate wavenumbers in the
+%deeper part of model, which can provide good initial models for EFWI. However, ERWI suffers from
+deeper part of model. However, ERWI suffers from
+the cycle-skipping problem due to the objective function of waveform residual. Since traveltime
+information relates to the background model more linearly, 
+%the nonlinearity of traveltime
+%fitting will be lower 
+%compared with amplitude fitting. Thus, we use the $L_2$ norm of the traveltime
+we use the traveltime
+residuals as objective function to 
+update background velocity model using
+wave equation reflected traveltime inversion (WERTI). 
+The reflection kernel analysis shows that mode decomposition can suppress the artifacts in
+gradient calculation. 
+We design a two-step inversion strategy, in which PP reflections are firstly used to invert P wave
+velocity ($V_p$),
+followed by S wave velocity ($V_s$) inversion with PS reflections. %based on the well recovered $V_p$.
+P/S separation of multi-component seismograms and spatial wave mode decomposition %provide P or S wave data effectively, which helps
+can reduce the nonlinearity of inversion effectively by selecting suitable P or S wave subsets for
+hierarchical inversion.
+Numerical example of Sigsbee2A model validates the effectiveness of the 
+algorithms and strategies for elastic WERTI (E-WERTI).
+

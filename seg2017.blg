@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: seg2017.aux
+The style file: seg.bst
+Database file #1: reference.bib
+Name 2 in "Denes Vigh and Kun Jiao, and Dave Watts, and Dong Sun" has a comma at the end for entry vigh:2014
+while executing---line 1491 of file seg.bst
+Name 3 in "Denes Vigh and Kun Jiao, and Dave Watts, and Dong Sun" has a comma at the end for entry vigh:2014
+while executing---line 1491 of file seg.bst
+Name 2 in "S. Xu and D. Wang, and F. Chen, and G. Lambare and Y. Zhang" has a comma at the end for entry xu:2012
+while executing---line 1491 of file seg.bst
+Name 3 in "S. Xu and D. Wang, and F. Chen, and G. Lambare and Y. Zhang" has a comma at the end for entry xu:2012
+while executing---line 1491 of file seg.bst
+Name 1 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1491 of file seg.bst
+Name 1 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1491 of file seg.bst
+Name 2 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1491 of file seg.bst
+Name 3 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1491 of file seg.bst
+Warning--empty chapter in Guo2016
+Name 2 in "Denes Vigh and Kun Jiao, and Dave Watts, and Dong Sun" has a comma at the end for entry vigh:2014
+while executing---line 1586 of file seg.bst
+Name 3 in "Denes Vigh and Kun Jiao, and Dave Watts, and Dong Sun" has a comma at the end for entry vigh:2014
+while executing---line 1586 of file seg.bst
+Name 1 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1586 of file seg.bst
+Name 2 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1586 of file seg.bst
+Name 3 in "C.L. Wang, and W. Weibull, and J.B. Cheng, and B. Arntsen" has a comma at the end for entry Wang2017WEMVA
+while executing---line 1586 of file seg.bst
+Name 2 in "S. Xu and D. Wang, and F. Chen, and G. Lambare and Y. Zhang" has a comma at the end for entry xu:2012
+while executing---line 1586 of file seg.bst
+Name 3 in "S. Xu and D. Wang, and F. Chen, and G. Lambare and Y. Zhang" has a comma at the end for entry xu:2012
+while executing---line 1586 of file seg.bst
+You've used 16 entries,
+            2639 wiz_defined-function locations,
+            807 strings with 9211 characters,
+and the built_in function-call counts, 6996 in all, are:
+= -- 739
+> -- 307
+< -- 10
++ -- 108
+- -- 104
+* -- 613
+:= -- 1191
+add.period$ -- 16
+call.type$ -- 16
+change.case$ -- 131
+chr.to.int$ -- 16
+cite$ -- 17
+duplicate$ -- 248
+empty$ -- 498
+format.name$ -- 134
+if$ -- 1457
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 17
+newline$ -- 52
+num.names$ -- 48
+pop$ -- 123
+preamble$ -- 1
+purify$ -- 132
+quote$ -- 0
+skip$ -- 174
+stack$ -- 0
+substring$ -- 493
+swap$ -- 26
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 94
+warning$ -- 1
+while$ -- 49
+width$ -- 0
+write$ -- 178
+(There were 15 error messages)
